@@ -1,6 +1,6 @@
-// Copyright (C) 2019 Agoric, under Apache License 2.0
-
 // @ts-check
+
+/* global makeWeakStore */
 
 import { assert, details as X } from '@agoric/assert';
 import { makeExternalStore } from '@agoric/store';
@@ -13,6 +13,7 @@ import { amountMath, MathKind } from './amountMath';
 import { makeAmountMath } from './deprecatedAmountMath';
 import { makeFarName, ERTPKind } from './interfaces';
 import { coerceDisplayInfo } from './displayInfo';
+import { makePaymentMaker } from './payment';
 
 import './types';
 
@@ -52,17 +53,10 @@ function makeIssuerKit(
   /** @type {Amount} */
   const emptyAmount = amountMath.makeEmpty(amountMathKind, brand);
 
-  const {
-    makeInstance: makePayment,
-    makeWeakStore: makePaymentWeakStore,
-  } = makeExternalStore('payment', () =>
-    Far(makeFarName(allegedName, ERTPKind.PAYMENT), {
-      getAllegedBrand: () => brand,
-    }),
-  );
+  const makePayment = makePaymentMaker(allegedName, brand);
 
   /** @type {WeakStore<Payment, Amount>} */
-  const paymentLedger = makePaymentWeakStore();
+  const paymentLedger = makeWeakStore('payment');
 
   function assertKnownPayment(payment) {
     assert(paymentLedger.has(payment), X`payment not found for ${allegedName}`);
