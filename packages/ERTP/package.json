@@ -72,7 +72,8 @@
     ],
     "require": [
       "esm",
-      "@agoric/install-ses"
+      "@agoric/install-ses",
+      "./test/_setupFakeVirtualObjectManager.js"
     ]
   },
   "eslintConfig": {
