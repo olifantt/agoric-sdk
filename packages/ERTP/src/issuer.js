@@ -161,12 +161,13 @@ function makeIssuerKit(
     // other uses.
 
     if (payments.length > 1) {
-      const paymentSet = new Set();
+      // TODO: replace with a Set that understands virtual objects
+      const antiAliasingStore = makeWeakStore('payment');
       payments.forEach(payment => {
-        if (paymentSet.has(payment)) {
+        if (antiAliasingStore.has(payment)) {
           throw new Error('same payment seen twice');
         }
-        paymentSet.add(payment);
+        antiAliasingStore.init(payment, undefined);
       });
     }
 

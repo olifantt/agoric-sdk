@@ -6,7 +6,7 @@ import { Far } from '@agoric/marshal';
 import { makeFarName, ERTPKind } from './interfaces';
 
 export const makePaymentMaker = (allegedName, brand) => {
-  const paymentVOMaker = state => {
+  const paymentVOFactory = state => {
     return {
       init: b => (state.brand = b),
       self: Far(makeFarName(allegedName, ERTPKind.PAYMENT), {
@@ -14,11 +14,10 @@ export const makePaymentMaker = (allegedName, brand) => {
       }),
     };
   };
-  
-  const paymentMaker = makeKind(paymentVOMaker);
+
+  const paymentMaker = makeKind(paymentVOFactory);
 
   const makePayment = () => paymentMaker(brand);
 
   return makePayment;
-}
-
+};
