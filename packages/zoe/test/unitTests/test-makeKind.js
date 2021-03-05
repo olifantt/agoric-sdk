@@ -1,4 +1,4 @@
-/* globals makeKind makeWeakStore */
+// @ts-check
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import '@agoric/zoe/tools/prepare-test-env';

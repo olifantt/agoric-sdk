@@ -1,4 +1,4 @@
-const start = zcf => {
+const start = _zcf => {
   makeKind();
   makeWeakStore();
 

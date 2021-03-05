@@ -23,7 +23,9 @@
     "TextDecoder": "readonly",
     "TextEncoder": "readonly",
     "URL": "readonly",
-    "URLSearchParams": "readonly"
+    "URLSearchParams": "readonly",
+    "makeKind": "readonly",
+    "makeWeakStore": "readonly"
   },
   "rules": {
     "quotes": [

@@ -1,7 +1,5 @@
 // @ts-check
 
-/* global makeWeakStore */
-
 import { assert, details as X } from '@agoric/assert';
 import { makeExternalStore } from '@agoric/store';
 import { E } from '@agoric/eventual-send';

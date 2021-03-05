@@ -1,4 +1,3 @@
-/* globals makeKind makeWeakStore */
 // @ts-check
 import { assert, details as X } from '@agoric/assert';
 import { E } from '@agoric/eventual-send';

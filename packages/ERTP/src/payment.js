@@ -1,5 +1,3 @@
-/* global makeKind */
-
 // @ts-check
 
 import { Far } from '@agoric/marshal';
