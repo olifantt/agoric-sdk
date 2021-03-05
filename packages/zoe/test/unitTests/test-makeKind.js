@@ -16,8 +16,6 @@ test('makeKind non-swingset', async t => {
   const bundle = await bundleSource(root);
   const zoe = makeZoe(fakeVatAdmin);
   const installation = await E(zoe).install(bundle);
-  console.log('makeKind in test file', makeKind());
-  console.log('makeWeakStore in test file', makeWeakStore());
   t.notThrows(() => makeKind());
   t.notThrows(() => makeWeakStore());
   await t.notThrowsAsync(() => zoe.startInstance(installation));
