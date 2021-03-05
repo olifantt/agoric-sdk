@@ -13,6 +13,8 @@ const evalContractBundle = (bundle, additionalEndowments = {}) => {
   const defaultEndowments = {
     console: louderConsole,
     assert,
+    makeKind,
+    makeWeakStore,
   };
 
   const fullEndowments = Object.create(null, {
