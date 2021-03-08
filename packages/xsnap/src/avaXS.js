@@ -40,7 +40,7 @@ const externals = [
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 
-const { entries, keys } = Object;
+const { keys } = Object;
 
 /**
  * Run one test script in an xsnap subprocess.
@@ -294,8 +294,8 @@ async function main(
     });
 
     totalTests += qty;
-    Object.entries(byStatus).forEach(([status, q]) => {
-      stats[status] += q;
+    Object.entries(byStatus).forEach(([status, qq]) => {
+      stats[status] += qq;
     });
   }
 
