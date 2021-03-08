@@ -1,4 +1,3 @@
-/* global makeKind makeWeakStore */
 import { Far } from '@agoric/marshal';
 
 const stuff = makeWeakStore();
