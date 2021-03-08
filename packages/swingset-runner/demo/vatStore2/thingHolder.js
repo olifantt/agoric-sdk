@@ -1,4 +1,3 @@
-/* global makeKind makeWeakStore */
 import { E } from '@agoric/eventual-send';
 
 const p = console.log;

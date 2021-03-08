@@ -1,4 +1,3 @@
-/* global makeKind */
 const p = console.log;
 
 function makeThingInstance(state) {
