@@ -1,3 +1,6 @@
+// @ts-check
+import '@agoric/swingset-vat/tools/prepare-test-env';
+
 import test from 'ava';
 import { loadBasedir, buildVatController } from '@agoric/swingset-vat';
 import path from 'path';

@@ -1,6 +1,8 @@
 /* global __dirname */
 // @ts-check
 
+import '@agoric/swingset-vat/tools/prepare-test-env';
+
 // eslint-disable-next-line import/no-extraneous-dependencies
 import test from 'ava';
 
