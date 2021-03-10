@@ -13,6 +13,7 @@ import { getInterfaceOf } from '@agoric/marshal';
 export function isEmptyNonRemotableObject(key) {
   return (
     typeof key === 'object' &&
+    key !== null &&
     Reflect.ownKeys(key).length === 0 &&
     getInterfaceOf(key) === undefined
   );
