@@ -4,7 +4,7 @@ import '@agoric/install-ses';
 import test from 'ava';
 import { Far } from '@agoric/marshal';
 import { makeStore, makeWeakStore } from '../src/index';
-import { isEmptyNonRemotableObject } from '../src/helper';
+import { isEmptyNonRemotableObject } from '../src/helpers';
 import '../src/types';
 
 test('empty object check', t => {
